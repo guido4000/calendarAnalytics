@@ -44,11 +44,13 @@ var countryMapReal = []countryMap{
 	{shortCode: "Bul", country: "BLG"},
 	{shortCode: "FIR", country: "ITA"},
 	{shortCode: "AT", country: " AT"},
+	{shortCode: "AUT", country: " AT"},
 	{shortCode: "SPA", country: "ESP"},
 	{shortCode: "FFM", country: " DE"},
 	{shortCode: "ZRH", country: " CH"},
 	{shortCode: "VN", country: " VN"},
 	{shortCode: "TH", country: " TH"},
+	{shortCode: "PHI", country: "PHI"},
 }
 
 func countryMapper(shortString string) (countryString string) {
@@ -58,6 +60,8 @@ func countryMapper(shortString string) (countryString string) {
 			return e.country
 		}
 	}
+
+	fmt.Println("error country not found: ", shortString)
 
 	return "error"
 }
