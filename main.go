@@ -348,7 +348,13 @@ func updateCountries(input []cleanSingleElements) (output []cleanSingleElements)
 	// countryMapper
 	for _, el := range input {
 		el.country = countryMapper(el.summary)
-		output = append(output, el)
+		// fmt.Printf("el: %#v\n", el)
+		if el.country == "error" {
+			fmt.Printf("issue detected. Entry will not be added\n")
+		} else {
+			output = append(output, el)
+		}
+
 	}
 	return
 }
